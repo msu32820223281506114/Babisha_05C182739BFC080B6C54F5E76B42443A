@@ -1,10 +1,24 @@
-num = int(input("Enter a number: "))    
-factorial = 1    
-if num < 0:    
-   print(" Factorial does not exist for negative numbers")    
-elif num == 0:    
-   print("The factorial of 0 is 1")    
-else:    
-   for i in range(1,num + 1):    
-       factorial = factorial*i    
-   print("The factorial of",num,"is",factorial)
+class Bank_Account:
+    def __init__(self):
+        self.balance=0
+        print("Hello!!! Welcome to the Deposit & Withdrawal Machine")
+ 
+    def deposit(self):
+        amount=float(input("Enter amount to be Deposited: "))
+        self.balance += amount
+        print("\n Amount Deposited:",amount)
+ 
+    def withdraw(self):
+        amount = float(input("Enter amount to be Withdrawn: "))
+        if self.balance>=amount:
+            self.balance-=amount
+            print("\n You Withdrew:", amount)
+        else:
+            print("\n Insufficient balance  ")
+ 
+    def display(self):
+        print("\n Net Available Balance=",self.balance)
+s = Bank_Account()
+s.deposit()
+s.withdraw()
+s.display()
